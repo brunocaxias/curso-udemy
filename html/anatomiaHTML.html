@@ -6,13 +6,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+
+
 </head>
 
 <body>
-  <div class="container">
-    
-  </div>
 
+  <header>
+    <h1>Exercicios HTML</h1>
+  </header>
+  <nav>
+    <a href ext-info="teste.html">00-Teste</a>
+  </nav>
+  <section id="conteudo">
+
+  </section>
+
+  <footer>
+    <br>
+    Teste do curso de Web Moderno
+  </footer>
+  <script>
+    document.querySelectorAll('[ext-info]').forEach(link => {
+      const conteudo = document.getElementById('conteudo');
+
+      link.onclick = function (e) {
+        e.preventDefault();
+        fetch(link.getAttribute('ext-info'))
+          .then(resp => resp.text())
+          .then(html => conteudo.innerHTML = html);
+      };
+    });
+  </script>
 </body>
 
 </html>
