@@ -1,1 +1,1 @@
-console.log("Tentativa de commit");
+console.log("Commit funcionando");
